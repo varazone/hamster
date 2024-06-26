@@ -1,0 +1,56 @@
+.count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.coin {
+  position: relative;
+  width: min-content;
+}
+
+.coin span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  font-weight: 700;
+  font-size: 2vmax;
+  word-break: break-all;
+}
+
+.ninja {
+  width: min-content;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.ninja img {
+  margin-bottom: -35px;
+  z-index: 1;
+  transition: transform 0.1s ease-in-out;
+}
+
+.ninja button {
+  transition: background 0.3s, filter 0.3s;
+}
+
+.ninja button:hover {
+  background: #2fc;
+}
+
+.ninja:active {
+  transform: translateY(4px);
+}
+
+.ninja:active img {
+  transform: scale(0.95);
+}
+
+.ninja:active button {
+  background: #91fcdd;
+  filter: drop-shadow(0 0 0.55rem #91fcdd);
+}
