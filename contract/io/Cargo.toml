@@ -1,0 +1,8 @@
+[package]
+name = "hamster-io"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+gstd = "1.1.1"
+gmeta = "1.1.1"

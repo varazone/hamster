@@ -1,0 +1,17 @@
+[package]
+name = "hamster"
+version = "0.1.0"
+edition = "2021"
+
+[dev-dependencies]
+gstd = "1.1.1"
+gtest = "1.1.1"
+
+[dependencies]
+gstd = "1.1.1"
+gmeta = "1.1.1"
+hamster-io = { path = "io" }
+
+[build-dependencies]
+gear-wasm-builder = "1.1.1"
+hamster-io = { path = "io" }
