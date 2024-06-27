@@ -1,4 +1,7 @@
-### Declare Environment Variables:
+## Deploy to Testnet
+1. Deploy [program](https://github.com/gear-foundation/Simple-Counter-pingv2/blob/master/frontend/src/assets/meta/hamster.opt.wasm) to the Testnet, please refer to the [documentation](https://wiki.gear-tech.io/docs/getting-started-in-5-minutes/#deploy-your-smart-contract-to-the-testnet).
+
+## Declare Environment Variables:
 Create a `.env` file; `.env.example` will let you know what variables are expected.
 
 - `VITE_NODE_ADDRESS`: The network address used by the contract.
