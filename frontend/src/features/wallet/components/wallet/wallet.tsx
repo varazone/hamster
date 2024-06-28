@@ -6,6 +6,7 @@ import { AccountButton } from '../account-button';
 import { WalletModal } from '../wallet-modal';
 
 import { VaraBalance } from '../vara-balance';
+import { Button } from '@gear-js/vara-ui';
 
 function Wallet() {
   const { account, isAccountReady } = useAccount();
@@ -19,7 +20,7 @@ function Wallet() {
           <AccountButton color="border" address={account.address} name={account.meta.name} onClick={openModal} />
         </>
       ) : (
-        <button onClick={openModal}>Connect Wallet</button>
+        <Button onClick={openModal}>Connect Wallet</Button>
       )}
 
       {isModalOpen && <WalletModal close={closeModal} />}
