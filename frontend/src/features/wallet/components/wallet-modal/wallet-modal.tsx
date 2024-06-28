@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { decodeAddress } from '@gear-js/api';
 import { useAccount, useAlert } from '@gear-js/react-hooks';
 import { Button } from '@gear-js/vara-ui';
@@ -20,6 +21,15 @@ function WalletModal({ close }: Props) {
   const { extensions, account, login, logout } = useAccount();
   const alert = useAlert();
   const { wallet, walletAccounts, setWalletId, resetWalletId, getWalletAccounts } = useWallet();
+
+  useEffect(() => {
+    const isNovaWallet = window?.walletExtension?.isNovaWallet;
+
+    if (isNovaWallet) {
+      setWalletId('polkadot-js');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const getWallets = () =>
     WALLETS.map(([id, { SVG, name }]) => {

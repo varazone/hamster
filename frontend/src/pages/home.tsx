@@ -1,7 +1,7 @@
 import { Container } from '@/components';
 import { Count } from '@/features/count/count';
 
-export const Home = () => {
+export default function Home() {
   return (
     <Container>
       <Count />

@@ -20,12 +20,6 @@ dependencies:
   '@polkadot/api':
     specifier: 10.11.2
     version: 10.11.2
-  '@polkadot/extension-dapp':
-    specifier: 0.46.5
-    version: 0.46.5(@polkadot/api@10.11.2)(@polkadot/util-crypto@12.6.2)(@polkadot/util@12.3.2)
-  '@polkadot/extension-inject':
-    specifier: 0.46.5
-    version: 0.46.5(@polkadot/api@10.11.2)(@polkadot/util@12.3.2)
   '@polkadot/react-identicon':
     specifier: 3.1.4
     version: 3.1.4(@polkadot/keyring@12.6.2)(@polkadot/networks@12.6.2)(@polkadot/util-crypto@12.6.2)(@polkadot/util@12.3.2)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.1.8)

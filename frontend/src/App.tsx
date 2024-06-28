@@ -1,27 +1,34 @@
-import { Outlet } from 'react-router-dom';
+import '@gear-js/vara-ui/dist/style.css';
+import { useAccount, useApi } from '@gear-js/react-hooks';
 
-import { Footer, Header } from './components';
 import { withProviders } from './providers';
-import { useApi } from '@gear-js/react-hooks';
+import { Container, Footer, Header } from './components';
+import { useWalletSync } from './features/wallet/hooks/use-wallet';
+import { Routing } from './pages';
 
 function Component() {
   const { isApiReady } = useApi();
+  const { isAccountReady } = useAccount();
 
-  if (!isApiReady) {
-    return <>!isApiReady</>;
-  }
+  useWalletSync();
+
+  const isAppReady = isApiReady && isAccountReady;
 
   return (
-    <>
-      <Header />
-      <main>
-        <Outlet />
-      </main>
-      <Footer />
-    </>
+    <main>
+      {isAppReady ? (
+        <>
+          <Header />
+          <Routing />
+          <Container>
+            <Footer />
+          </Container>
+        </>
+      ) : (
+        <p>init</p>
+      )}
+    </main>
   );
 }
 
-const App = withProviders(Component);
-
-export { App };
+export const App = withProviders(Component);

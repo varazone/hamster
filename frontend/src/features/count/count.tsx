@@ -1,5 +1,10 @@
+import { useAlert, useHandleCalculateGas, withoutCommas } from '@gear-js/react-hooks';
 import { Button } from '@gear-js/vara-ui';
 import { useHamsterState, useStateMessage } from '@/app/hooks/use-read-state';
+import { useProgramMetadata } from '@/app/hooks/api';
+
+import { ADDRESS } from '@/consts';
+import metaTxt from '@/assets/meta/hamster.meta.txt';
 
 import NinjaImage from './assets/ninja.png';
 import CoinImage from './assets/coin.png';
@@ -7,14 +12,27 @@ import CoinImage from './assets/coin.png';
 import styles from './style.module.scss';
 
 export const Count = () => {
-  const handleMessage = useStateMessage();
+  const alert = useAlert();
   const { state } = useHamsterState();
+  const handleMessage = useStateMessage();
+  const meta = useProgramMetadata(metaTxt);
+  const calculateGas = useHandleCalculateGas(ADDRESS.CONTRACT, meta);
 
   const onClick = () => {
-    handleMessage({
-      payload: 'Click',
-      gasLimit: 120000000000,
-    });
+    const payload = 'Click';
+
+    calculateGas(payload)
+      .then((res) => res.toHuman())
+      .then(({ min_limit }) => {
+        const minLimit = withoutCommas(min_limit as string);
+        const gasLimit = Math.floor(Number(minLimit) + Number(minLimit) * 0.2);
+
+        handleMessage({ payload, gasLimit });
+      })
+      .catch((error) => {
+        console.log(error);
+        alert.error('Gas calculation error');
+      });
   };
 
   return (
