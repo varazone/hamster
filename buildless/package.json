@@ -1,0 +1,18 @@
+{
+  "name": "@btwiuse/buildless",
+  "version": "0.0.1",
+  "description": "buildless frontend example",
+  "main": "index.js",
+  "repository": "https://github.com/btwiuse/buildless",
+  "author": "btwiuse",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@web/dev-server": "^0.4.1",
+    "prettier": "^3.1.0"
+  },
+  "scripts": {
+    "fmt": "yarn prettier -w .",
+    "start": "yarn wds"
+  }
+}

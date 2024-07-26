@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Wallet</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://vara.network/favicon.ico"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+    <script type="importmap">
+      {
+        "imports": {
+          "eruda": "https://esm.sh/eruda",
+          "preact": "https://esm.sh/preact@10.19.2",
+          "preact/": "https://esm.sh/preact@10.19.2/",
+          "htm/preact": "https://esm.sh/htm@3.1.1/preact?external=preact",
+          "react": "https://esm.sh/preact@10.19.2/compat",
+          "react-dom": "https://esm.sh/preact@10.19.2/compat",
+          "@gear-js/api": "https://esm.sh/@gear-js/api",
+          "@polkadot/types": "https://esm.sh/@polkadot/types",
+          "@polkadot/util": "https://esm.sh/@polkadot/util",
+          "@polkadot/util-crypto": "https://esm.sh/@polkadot/util-crypto",
+          "@polkadot/extension-dapp": "https://esm.sh/@polkadot/extension-dapp",
+          "@polkadot/ui-keyring": "https://esm.sh/@polkadot/ui-keyring",
+          "@polkadot/api": "https://esm.sh/@polkadot/api"
+        }
+      }
+    </script>
+    <script type="module">
+      import eruda from "eruda";
+      eruda.init();
+    </script>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/api/">Api</a>
+      <a href="/wallet/" aria-current="page">Wallet</a>
+      <a href="/send/">Send</a>
+    </nav>
+    <main id="app">
+      <a href="./script.js" target="_blank">./script.js</a>
+      <br/>
+      <!-- <h1>Wallet</h1> -->
+      <button id="connectButton" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        Connect Wallet
+      </button>
+      <button id="signMessageButton" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded opacity-50 cursor-not-allowed" disabled>
+        Sign Message
+      </button>
+      <button id="signTransactionButton" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded opacity-50 cursor-not-allowed" disabled>
+        Sign Transaction
+      </button>
+    </main>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
