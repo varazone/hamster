@@ -4,14 +4,14 @@ version = "0.1.0"
 edition = "2021"
 
 [dev-dependencies]
-gstd = "1.1.1"
-gtest = "1.1.1"
+gstd = "1.4.2"
+gtest = "1.4.2"
 
 [dependencies]
-gstd = "1.1.1"
-gmeta = "1.1.1"
+gstd = "1.4.2"
+gmeta = "1.4.2"
 hamster-io = { path = "io" }
 
 [build-dependencies]
-gear-wasm-builder = "1.1.1"
+gear-wasm-builder = "1.4.2"
 hamster-io = { path = "io" }
